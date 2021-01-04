@@ -1,0 +1,12 @@
+shop
+3nWV4h4gMO82VNwo
+
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://shop:3nWV4h4gMO82VNwo@cluster0.hbwq1.mongodb.net/shop?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
