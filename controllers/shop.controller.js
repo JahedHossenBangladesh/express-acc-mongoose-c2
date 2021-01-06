@@ -29,3 +29,18 @@ module.exports.getById = async (req, res, next) => {
     return res.status(500).json({ message: "somethings wrong in single Id" });
   }
 };
+
+// this is the put
+module.exports.updateById = async (req, res, next) => {
+  const id = req.params.id;
+  const updateField = req.body;
+  try {
+    const updatedShop = await shopService.updateByIds(id, updateField, {
+      new: true,
+      runValidators: true,
+    });
+    return res.status(200).send(updatedShop);
+  } catch (e) {
+    return res.status(500).json({ message: "somethings wrong in put" });
+  }
+};
