@@ -6,6 +6,6 @@ module.exports.create = (shop) => {
 module.exports.getAll = (shop) => {
   return Shop.find(shop);
 };
-module.exports.gitById = (shop) => {
+module.exports.getById = (shop) => {
   return Shop.findById(shop);
 };

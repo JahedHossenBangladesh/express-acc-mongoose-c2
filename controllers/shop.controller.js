@@ -22,6 +22,7 @@ module.exports.getAll = async (req, res, next) => {
 module.exports.getById = async (req, res, next) => {
   try {
     const singleInfo = await shopService.getById(req.params.id);
+    console.log("this is singleInfo", singleInfo);
     return res.status(200).json(singleInfo);
   } catch (e) {
     console.log(e);
