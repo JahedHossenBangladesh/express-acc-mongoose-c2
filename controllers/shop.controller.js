@@ -44,3 +44,11 @@ module.exports.updateById = async (req, res, next) => {
     return res.status(500).json({ message: "somethings wrong in put" });
   }
 };
+module.exports.deleteById = async (req, res, next) => {
+  try {
+    await shopService.deleteById(req.params.id);
+    return res.status(200).send({ message: "Deleted" });
+  } catch (e) {
+    return res.status(500).json({ message: "The delete is not done" });
+  }
+};

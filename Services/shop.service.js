@@ -13,4 +13,8 @@ module.exports.getById = (shop) => {
 
 module.exports.updateByIds = (updateById, updateField, validation) => {
   return Shop.findOneAndUpdate(updateById, updateField, validation);
+  // Shop.updateOne({ _id: id }, { ...itemsToUpdate }); probably ans
+};
+module.exports.deleteById = (id) => {
+  return Shop.deleteOne({ _id: id });
 };
